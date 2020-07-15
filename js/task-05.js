@@ -1,26 +1,18 @@
-"use strict"
+"use strict";
 
-const checkForSpam = function(message) {
+const checkForSpam = function (message) {
+  const words = message.toLocaleLowerCase().split(" ");
+  console.log(words);
+  const spam = "[spam]";
+  const sale = "sale";
 
-    
-    const string = message.split(' ');
-    console.log(string);
-    const spam = 'spam'.toLocaleLowerCase;
-    const sale = 'sale'.toLocaleLowerCase;
-    const request = message.includes(spam);
-    const request2 = message.includes(sale);
-    return request2;
- };
-  
+  return words.includes(spam) || words.includes(sale);
+};
 
+console.log(checkForSpam("Latest technology news"));
 
-  /*
-   * Вызовы функции для проверки работоспособности твоей реализации.
-   */
-  console.log(checkForSpam('Latest technology news')); // false
-  
-  console.log(checkForSpam('JavaScript weekly newsletter')); // false
-  
-  console.log(checkForSpam('Get best sale offers now!')); // true
-  
-  console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+console.log(checkForSpam("JavaScript weekly newsletter"));
+
+console.log(checkForSpam("Get best sale offers now!"));
+
+console.log(checkForSpam("[SPAM] How to earn fast money?"));
