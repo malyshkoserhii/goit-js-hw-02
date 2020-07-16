@@ -6,26 +6,27 @@
 
 const findLongestWord = function (string) {
   const words = string.split(" ");
-  const longestWord = words[0].length;
-  console.log('longestWorld', longestWord);
+  let longestWord = words[0].length;
+  console.log('Припускаємо, що перше слово масиву найдовшеб тобто longestWorld', longestWord);
   console.log('Масив', words);
   for (let i = 0; i < words.length; i += 1) {
     let length = words[i].length;
-    for(let j = 0; j < length; j += 1) {
-      
-      console.log(j);
+    if(length > longestWord) {
+      longestWord = length;
     }
 
+    // for(let j = 0; j < length; j += 1) {
+    //   if(j > longestWord) {
+    //     j = longestWord;
+    //     break;
+    //   }
+    //   console.log('j', j);
+    // }
 
-    console.log('Слово - елемент масиву', words[i]);
-    console.log('Довжина слова', length);
-    if (length > longestWord) {
-      length = longestWord;
-    }
+    console.log('words[i] Слово - елемент масиву', words[i]);
+    console.log('lenght - Довжина слова', length);
   }
 
-  // const length = words.length;
-  // console.log(length);
   return longestWord;
 };
 
