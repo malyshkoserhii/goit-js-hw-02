@@ -1,12 +1,12 @@
 "use strict";
 
 const checkForSpam = function (message) {
-  const words = message.toLocaleLowerCase().split(" ");
-  console.log(words);
-  const spam = "[spam]";
+  const content = message.toLocaleLowerCase();
+  console.log(content);
+  const spam = "spam";
   const sale = "sale";
 
-  return words.includes(spam) || words.includes(sale);
+  return content.includes(spam) || content.includes(sale);
 };
 
 console.log(checkForSpam("Latest technology news"));
