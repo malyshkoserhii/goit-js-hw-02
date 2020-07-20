@@ -1,30 +1,25 @@
+"use strict";
 
-// 1. Варіант через Array.from для того щоб перетворити псевдомасив у масив
-// const add = function () {
-//   const args = Array.from(arguments);
-//   console.log(arguments);
-//   console.log(args);
-//   let total = 0;
-//   for (const arg of args) {
-//     total += arg;
-//   }
+const sum = function (figures) {
+  let input;
+  let total = 0;
+  do {
+    const numbers = [];
 
-//   return total;
-// };
+    input = prompt("Було введено не число, будь ласка, спробуйте ще раз");
+    numbers.push(input);
 
-// console.log(add(5, 5, 5));
-// console.log(add(4, 5, 6));
+    if (isNaN(Number(input))) {
+      alert("Ви не ввели число");
+      continue;
+    } else {
+      for (let i = 0; i < numbers.length; i += 1) {
+        total += +numbers;
+      }
+    }
+  } while (input !== null);
 
-// 2. Варіант через операцію rest (або збір) - більш новий та сучанисний
-// const add = function (...args) {
-//   console.log(args);
-//   let total = 0;
-//   for (const arg of args) {
-//     total += arg;
-//   }
+  return `Загальна сума: ${total}`;
+};
 
-//   return total;
-// };
-
-// console.log(add (5, 6, 7));
-// console.log(add (4, 5, 6));
+console.log(sum());
