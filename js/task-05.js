@@ -3,10 +3,8 @@
 const checkForSpam = function (message) {
   const content = message.toLocaleLowerCase();
   console.log(content);
-  const spam = "spam";
-  const sale = "sale";
 
-  return content.includes(spam) || content.includes(sale);
+  return content.includes("spam") || content.includes("sale");
 };
 
 console.log(checkForSpam("Latest technology news"));

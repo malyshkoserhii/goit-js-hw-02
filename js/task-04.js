@@ -1,18 +1,13 @@
 "use strict";
 
 const formatString = function (string) {
-  let visibleContent;
-  const content = string.split("");
   const maxLength = 40;
-  const dots = ["..."];
 
-  if (content.length > maxLength) {
-    visibleContent = content.splice(0, 40).concat(dots).join("");
-  } else {
-    visibleContent = content.join("");
+  if (string.length > maxLength) {
+    return string.slice(0, 40) + "...";
   }
 
-  return visibleContent;
+  return string;
 };
 
 console.log(formatString("Curabitur ligula sapien, tincidunt non."));
